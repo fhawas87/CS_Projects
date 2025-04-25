@@ -2,8 +2,6 @@
 C / C++ projects assigned from computer science studies
 
 
-<--------------------------------------------------------------------------------------------------->
-
 1. Super Calculator
 
 First college project called "Super Calculator".
