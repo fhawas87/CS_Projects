@@ -15,4 +15,4 @@ The project was about solving 10 math problems. Each function in my code is call
 
 
 
-3. CyclesCounter
+3. Count 4-Cycles
