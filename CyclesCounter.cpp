@@ -40,7 +40,7 @@ static void InitializeMatrix(int& NumberOfVertices, int& NumberOfFaces, char** C
 
         for (int j = 0; j < NumberOfVertices; j++) {
 
-            *(*(Matrix + i) + j) = (i != j) ? 1 : 0;
+            *(*(Matrix + i) + j) = (i != j) ? 1 : 0;                                                            // FILLING FIRST DEGREE MATRIX WITH ONES EXCEPT MAIN DIAGONAL
         }
     }
 
@@ -59,9 +59,9 @@ static void InitializeMatrix(int& NumberOfVertices, int& NumberOfFaces, char** C
 
             for (int j = i + 1; j < EachFaceSize; j++) {
 
-                *(*(Matrix + VerticesArray[i]) + VerticesArray[j]) = 0;
-                *(*(Matrix + VerticesArray[j]) + VerticesArray[i]) = 0;
-            }
+                *(*(Matrix + VerticesArray[i]) + VerticesArray[j]) = 0;                                         // IF THERE IS AN EDGE BETWEEN 2 VERTICES, REPLACE 1 WITH 0 
+                *(*(Matrix + VerticesArray[j]) + VerticesArray[i]) = 0;                                         // SINCE ONLY SPATIAL DIAGONALS HAVE TO BE CONSIDERED 
+            }                                                                                                   // IN CASE OF CYCLES IN POLYHEDRON
         }
     }
 }
@@ -76,7 +76,7 @@ static void MatrixMultiplication(int& NumberOfVertices) {
 
             for (int inner = 0; inner < NumberOfVertices; inner++) {
 
-                *(*(SquaredMatrix + row) + col) += (*(*(Matrix + row) + inner) * *(*(Matrix + inner) + col));
+                *(*(SquaredMatrix + row) + col) += (*(*(Matrix + row) + inner) * *(*(Matrix + inner) + col));    // SQUARE ADJACENCY MATRIX TO GET NUMBER OF PATHS WITH LENGTH 2 BETWEEN TWO VERTICES
             }
         }
     }
@@ -84,7 +84,7 @@ static void MatrixMultiplication(int& NumberOfVertices) {
 
 static inline int BinomialCoefficients(int& Paths) {
 
-    return (Paths < 2) ? 0 : ((Paths * (Paths - 1)) / 2);
+    return (Paths < 2) ? 0 : ((Paths * (Paths - 1)) / 2);                                                        // SINCE WE LOOK FOR 4-CYCLES WE CHOOSE TWO OF THIS PATHS
 }
 
 static double CountCycles(int& NumberOfVerticies) {
