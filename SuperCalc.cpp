@@ -249,11 +249,6 @@ void Convex_Polygon_Area ( double *double_input, int &input_length ) {
     // Using build in function std::sort() with lambda to define,
     // How elements are compared for sorting,
     // In this case, calculating arctan of every point relative to the centroid,
-    // The lambda is basically telling the compiler to access the centroid variable,
-    // Firstly I was accesing cantroid variable by [centroid] but then I learnt,
-    // That it is capturing "centroid" by value ( making a copy of centroid ),
-    // And I can tell the compiler to access the centroid value by reference,
-    // [&centroid], it is more efficient and in this case I'm certain that it doesn't affect original centroid value,
 
     // I could use something like : std::vector<std::pair< double, vertex >> x,
     // Where double reference to an atan2(v.x - cen.x,v.y - cen.y) of point and centroid, and point reference
