@@ -200,67 +200,37 @@ int main() {
         FillArray(&CharPointer, NumberOfVillages);
         RemoveDuplicates(NumberOfVillages);
         InitializeMatrixWithEuclideanLength();
-        /*
-        if (ShortestPathLength() == 16805) {
-
-            printf("%d, %d\n", NumberOfVillages, NumberOfUniqueVillages);
-
-            for (const auto& d : Duplicates) {
-
-                printf("%d, ", d);
-            }
-
-            printf("\n");
-
-            for (int i = 0; i < NumberOfUniqueVillages; i++) {
-
-                printf("(%d, %d), ", VillagesLocations[2 * i], VillagesLocations[(2 * i) + 1]);
-            }
-
-            printf("\n");
-
-            for (int i = 0; i < NumberOfUniqueVillages; i++) {
-
-                for (int j = 0; j < NumberOfUniqueVillages; j++) {
-
-                    printf("%.0f ", AdjacencyMatrix[i][j]);
-                }
-
-                printf("\n");
-            }
-
-            printf("\n");
-        }
-        */
-
-        printf("%d, %d\n", NumberOfVillages, NumberOfUniqueVillages);
-
-        for (const auto& d : Duplicates) {
-
-            printf("%d, ", d);
-        }
-
-        printf("\n");
-
-        for (int i = 0; i < NumberOfUniqueVillages; i++) {
-
-            printf("(%d, %d), ", VillagesLocations[2 * i], VillagesLocations[(2 * i) + 1]);
-        }
-
-        printf("\n");
-
-        for (int i = 0; i < NumberOfUniqueVillages; i++) {
-
-            for (int j = 0; j < NumberOfUniqueVillages; j++) {
-
-                printf("%.0f ", AdjacencyMatrix[i][j]);
-            }
-
-            printf("\n");
-        }
-
-        printf("\n");
-
+/*
+______________________________________________________________________________________________________________________________    
+|        printf("%d, %d\n", NumberOfVillages, NumberOfUniqueVillages);                                                       |
+|                                                                                                                            |
+|        for (const auto& d : Duplicates) {                                                                                  |
+|                                                                                                                            |
+|            printf("%d, ", d);                                                                                              |
+|        }                                                                                                                   |
+|                                                                                                                            |
+|        printf("\n");                                                                                                       |
+|                                                                                                                            |
+|        for (int i = 0; i < NumberOfUniqueVillages; i++) {                                                                  |
+|                                                                                                                            |
+|            printf("(%d, %d), ", VillagesLocations[2 * i], VillagesLocations[(2 * i) + 1]);                                 |     THIS PART IS ONLY FOR DEBUGGING
+|        }                                                                                                                   |
+|                                                                                                                            |
+|        printf("\n");                                                                                                       |
+|                                                                                                                            |
+|        for (int i = 0; i < NumberOfUniqueVillages; i++) {                                                                  |
+|                                                                                                                            |
+|            for (int j = 0; j < NumberOfUniqueVillages; j++) {                                                              |
+|                                                                                                                            |
+|                printf("%.0f ", AdjacencyMatrix[i][j]);                                                                     |
+|            }                                                                                                               |
+|                                                                                                                            |
+|            printf("\n");                                                                                                   |    
+|        }                                                                                                                   |
+|                                                                                                                            |
+|        printf("\n");                                                                                                       |
+|____________________________________________________________________________________________________________________________|
+*/
         printf("%.0f\n", ShortestPathLength());
 
         NumberOfInstances--;
