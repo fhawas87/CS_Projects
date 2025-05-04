@@ -1,3 +1,7 @@
+/* TRAVELING SALESMAN PROBLEM, RETURNING SHORTEST PATH LENGTH USING HELD-KARP ALGORITHM WITH CUSTOM INPUT READING FOR OPTIMIZATION */
+
+
+
 #include <stdio.h>
 #include <cmath>
 #include <vector>
@@ -113,11 +117,23 @@ static inline double EuclideanLength(int FirstVillageCoordinateX, int FirstVilla
 static inline double DistanceFromRiver(int FirstVillageCoordinateX, int FirstVillageCoordinateY,
                                        int SecondVillageCoordinateX, int SecondVillageCoordinateY) {
 
-    double  DistanceToRiver                         = FirstVillageCoordinateX;                                                                           // IF DISTANCE BETWEEN TWO VILLAGES IS GREATER THAN 1000
-    double  DistanceToSecondVillageCoordinateY      = fabs(SecondVillageCoordinateY - FirstVillageCoordinateY);                                          // TARZAN DOESN'T KNOW THE PATH SO HE USES SHORTEST PATH 
-    double  DistanceToSecondVillageCoordinateX      = SecondVillageCoordinateX;                                                                          // TO THE RIVER ( RIVER :  x = 0 ), THEN ALONG THE RIVER
-                                                                                                                                                         // UNTILL HE REACHES y COORDINATE LVL OF THE FINAL VILLAGE
-    return (DistanceToRiver + DistanceToSecondVillageCoordinateX + DistanceToSecondVillageCoordinateY);
+    double TotalDistance = 0;
+
+    if (FirstVillageCoordinateY == SecondVillageCoordinateY) {                                
+
+        TotalDistance = fabs(FirstVillageCoordinateX - SecondVillageCoordinateX);                                                           // CASE WHERE Y COORDINATES OF TWO VILLAGES ARE THE SAME
+    }                                                                                                                                       // AND WHILE TRAVELLING TO THE RIVER WE FIND SECOND VILLAGE
+
+    else {
+
+        double  DistanceToRiver = FirstVillageCoordinateX;
+        double  DistanceToSecondVillageCoordinateY = fabs(SecondVillageCoordinateY - FirstVillageCoordinateY);
+        double  DistanceToSecondVillageCoordinateX = SecondVillageCoordinateX;                                                              // IF DISTANCE BETWEEN TWO VILLAGES IS GREATER THAN 1000
+                                                                                                                                            // TARZAN DOESN'T KNOW THE PATH SO HE USES SHORTEST PATH 
+        TotalDistance = DistanceToRiver + DistanceToSecondVillageCoordinateY + DistanceToSecondVillageCoordinateX;                          // TO THE RIVER ( RIVER :  x = 0 ), THEN ALONG THE RIVER
+    }                                                                                                                                       // UNTILL HE REACHES y COORDINATE LVL OF THE FINAL VILLAGE
+
+    return TotalDistance;
 }
 
 static void InitializeMatrixWithEuclideanLength() {
