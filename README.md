@@ -18,7 +18,7 @@ which vertices with the maximum degree are connected to one additional vertex r
 
 3. Count 4-Cycles
 
-For a given convex polyhedron determinate the number of 4-vertex cycles in the graph formed by the spatial diagonals of the polyhedron.
+For a given convex polyhedron determinate the number of 4-vertex cycles in the graph formed by the space diagonals of the polyhedron.
 
 
 4. Tarzan ( TSP )
