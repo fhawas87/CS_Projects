@@ -12,12 +12,15 @@ The project was about solving 10 math problems. Each function in my code is call
 
 2. Banana Tree
 
-
+The banana tree B(n,k) is defined as n stars with k vertices (n>0, k>0), 
+which vertices with the maximum degree are connected to one additional vertex r
 
 
 3. Count 4-Cycles
 
-
+For a given convex polyhedron determinate the number of 4-vertex cycles in the graph formed by the spatial diagonals of the polyhedron.
 
 
 4. Tarzan ( TSP )
+
+Traveling salesman problem with additional river logic ( explained inside the river distance function ).
