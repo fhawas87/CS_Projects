@@ -24,3 +24,7 @@ For a given convex polyhedron determinate the number of 4-vertex cycles in the g
 4. Tarzan ( TSP )
 
 Traveling salesman problem with additional river logic ( explained inside the river distance function ).
+
+5. Collatz Sequence
+
+Just finding longest descending sequence in Collatz Sequence.
