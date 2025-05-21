@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
-#include <algorithm>
 
 #define BUFFER_SIZE 63749961
 #define MAX_VERTICES 1000
