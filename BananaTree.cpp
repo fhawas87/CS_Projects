@@ -14,7 +14,6 @@ int EachRowDegree[MAX_VERTICES];
 int NumberOfLeaves;
 int NumberOfBranches;
 int NumberOfRoots;
-
 int BranchIndex;
 
 static void ReadInputBytes() {
