@@ -1,4 +1,4 @@
-# CS_Projects
+# Algorithms_and_Data_Structures
 C / C++ projects assigned from computer science studies
 
 
