@@ -1,5 +1,5 @@
 # Algorithms_and_Data_Structures
-C / C++ projects assigned from computer science studies
+C / C++ projects assigned for classes focused on Algorithms & Data Structures
 
 
 1. Super Calculator
